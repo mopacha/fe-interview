@@ -13,9 +13,6 @@
 
 
 
-##  合作交流
-
-<img src="./public.jpg">
 
 
 
