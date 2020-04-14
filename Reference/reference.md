@@ -1,4 +1,4 @@
-# 2020年前端面试复习必读文章【超百篇文章/赠复习导图】
+# Fe-interview
 
 > 转载请联系作者。[原文链接](https://github.com/axuebin/articles/issues/39)
 
