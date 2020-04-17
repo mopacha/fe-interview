@@ -6,5 +6,9 @@
 
 3. eslint 
 
+4. 性能优化
+
+5. canvas
+
 
 
