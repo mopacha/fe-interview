@@ -10,5 +10,7 @@
 
 5. canvas
 
+6. 雅虎军规35条
+https://www.jianshu.com/p/4cbcd202a591
 
 
