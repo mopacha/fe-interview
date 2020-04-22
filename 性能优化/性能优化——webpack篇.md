@@ -1,12 +1,15 @@
 # webpack 优化方案
 
-## 提高构建速度
+
+> 相信每个用过`webpack`的同学都对“打包”和“压缩”这样的事情烂熟于心。这些老生常谈的特性，我更推荐大家去阅读文档。本文将把注意力放在`webpack`的性能优化上。
+
+## 一、提高构建速度
 
 ### 1. 给 loader 减轻负担
 
 **用 include 或 exclude 来帮我们避免不必要的转译**
 
-```
+```js
 module: {
   rules: [
     {
@@ -25,9 +28,8 @@ module: {
 
 **开启缓存将转译结果缓存至文件系统**
 
-```
+```js
 loader: 'babel-loader?cacheDirectory=true'
-
 ```
 
 ### 2. 使用 Happypack 将 loader 由单进程转为多进程
@@ -66,9 +68,58 @@ module.exports = {
 
 ### 3. DllPlugin 提取公用库
 
-使用`DllPlugin`把第三方库单独打包到一个文件中，这个文件就是一个单纯的依赖库。这个依赖库不会跟着你的业务代码一起被重新打包，只有当依赖自身发生版本变化时才会重新打包。
+开发过程中，我们经常需要引入大量第三方库，这些库并不需要随时修改或调试，我们可以使用`DllPlugin`和`DllReferencePlugin`单独构建它们。具体使用如下：
 
-这里只是引入性能优化的方法，怎么用，并不是本文的重点。
+1. 配置webpack.dll.config.js
+
+```js
+// build/webpack.dll.config.js
+var path = require("path");
+var webpack = require("webpack");
+module.exports = {
+ // 要打包的模块的数组
+ entry: {
+    vue: ['vue/dist/vue.js', 'vue', 'vue-router', 'vuex'],
+    comment: ['jquery', 'lodash', 'jquery/dist/jquery.js']
+ },
+ output: {
+  path: path.join(__dirname, '../static/dll'), // 打包后文件输出的位置
+  filename: '[name].dll.js',// vendor.dll.js中暴露出的全局变量名。
+  library: '[name]_library' // 与webpack.DllPlugin中的`name: '[name]_library',`保持一致。
+ },
+ plugins: [
+  new webpack.DllPlugin({
+   path: path.join(__dirname, '.', '[name]-manifest.json'),
+   name: '[name]_library', 
+   context: __dirname
+  }),
+ ]
+};
+```
+
+2. 在package.json的scripts里加上：`"dll": "webpack --config build/webpack.dll.config.js"`
+
+3. 运行npm run dll 在static/js下生成`vendor-manifest.json`
+
+4. 在build/webpack.base.conf.js里加上:
+
+```js
+// 添加DllReferencePlugin插件
+ plugins: [
+  new webpack.DllReferencePlugin({
+   context: __dirname,
+   manifest: require('./vendor-manifest.json')
+  })
+ ],
+```
+
+5. 最后在index.html中引入`vendor.dll.js`
+
+```js
+<div id="app"></div>
+<script src="./static/dll/vue.dll.js"></script>
+<script src="./static/dll/comment.dll.js"></script>
+```
 
 ### 4. externals 选项
 
@@ -96,7 +147,7 @@ module.exports = {
 </body>
 ```
 
-## 构建体积压缩
+## 二、构建体积压缩
 
 可以使用`vue-cli4`或者`webpack-bundle-analyzer`生成构建统计报告，方法如下：
 
@@ -170,3 +221,43 @@ use:[
 ```js
 const Foo = () => import("./Foo.vue");
 ```
+
+
+### 5. 开启gzip压缩
+
+
+以`vue-cli`为例配置`Gzip`如下：
+1. `vue.config.js`配置`Gzip`压缩
+
+```js
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
+module.exports = {
+  ......
+  configureWebpack: config => {
+    config.plugins.push(new CompressionPlugin({
+          filename: '[path].gz[query]',
+          algorithm: 'gzip',
+          test:/\.js$|\.html$|.\css/, // 匹配文件名
+          threshold: 10240, // 对超过10k的数据压缩
+          minRatio: 0.8,	// 只有压缩好这个比率的资产才能被处理
+          deleteOriginalAssets: true // 删除源文件
+       }));
+  }
+}
+```
+
+2. 配置`Nginx`
+
+> 将nginx配置开启gzip压缩，nginx会根据配置情况对指定的类型文件进行压缩。主要针对js与css。如果文件路径中存在与原文件同名（加了个.gz），nginx会获取gz文件，如果找不到，会主动进行gzip压缩。
+
+`nginx`配置如下：
+
+```bash
+ gzip on; #开启或关闭gzip on off
+ gzip_disable "msie6"; #不使用gzip IE6
+ gzip_min_length 100k; #gzip压缩最小文件大小，超出进行压缩（自行调节）
+ gzip_buffers 4 16k; #buffer 不用修改
+ gzip_comp_level 8; #压缩级别:1-10，数字越大压缩的越好，时间也越长
+ gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png; #  压缩文件类型 
+ gzip_vary off;
+ ```
