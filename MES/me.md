@@ -16,3 +16,5 @@ https://www.jianshu.com/p/4cbcd202a591
 解释篇：https://learnku.com/docs/f2e-performance-rules/reduce-the-number-of-http-requests/6369
 
 
+- 重绘与重排
+
