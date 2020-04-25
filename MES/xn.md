@@ -1,0 +1,8 @@
+### 前端性能优化——webpack篇
+https://mp.weixin.qq.com/s/O5GYyd70Toe010f18SOkWA
+
+### 雅虎军规35条
+https://www.jianshu.com/p/4cbcd202a591
+
+解释篇：https://learnku.com/docs/f2e-performance-rules/reduce-the-number-of-http-requests/6369
+
