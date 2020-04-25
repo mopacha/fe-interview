@@ -59,8 +59,6 @@ https://www.jianshu.com/p/703ecb26b4e9
 ### 聊聊Vuex（一）
 https://www.jianshu.com/p/de949c6d0b0d
 
-### 从一道题浅谈JavaScript 运行机制
-https://www.jianshu.com/p/2ae88363c79b
 
 ### 理解NodeJS 实现高并发原理
 https://www.jianshu.com/p/674ed545280d
