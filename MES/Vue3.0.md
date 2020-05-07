@@ -2,11 +2,17 @@
 
 
 ### 3.3 数据绑定
-
 *   [Vue 深入响应式原理](https://ustbhuangyi.github.io/vue-analysis/v2/reactive/)
 *   [面试官: 实现双向绑定Proxy比defineproperty优劣如何?](https://juejin.im/post/5acd0c8a6fb9a028da7cdfaf)
 *   [为什么Vue3.0不再使用defineProperty实现数据监听？](https://mp.weixin.qq.com/s/O8iL4o8oPpqTm4URRveOIA)
 *   [Vue 的响应式原理中 Object.defineProperty 有什么缺陷？](https://www.cnblogs.com/wangxi01/p/11225555.html)
+
+
+### vue2.0与3.0对比以及vue3.0 API变化入门
+https://www.jianshu.com/p/b1fb5d549fcd
+https://www.jianshu.com/p/f6b26f0c1e60
+
+
 
 
 ### 总结
