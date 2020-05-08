@@ -42,6 +42,20 @@ https://github.com/airuikun/blog/issues/4
 ### 深入webpack打包原理，loader和plugin的实现
 https://juejin.im/post/5eae43f85188256d841a3b8b
 
+
+### webpack loader (推荐)
+http://www.ayqy.net/blog/webpack-loader/
+
+### 关于webpack的面试题
+ https://www.cnblogs.com/gaoht/p/11310365.html
+
+### loader入门
+ https://www.dazhuanlan.com/2019/12/31/5e0adabe7de21/
+
+### AST 与前端工程化实战
+https://blog.csdn.net/chushan2757/article/details/100771564
+
+
 ### webpack 打包原理总结
 
 1. 解析入口文件，使用`@babel/parser`转为AST抽象语法树
