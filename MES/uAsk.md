@@ -77,7 +77,7 @@ vue适合中小型项目，状态改变需要watch监听，数据量太大的话
 *Object.defineProperty*
 - 兼容性好，支持IE9
 - vue2设计中，考虑到性能/体验的性价，通过下标方式修改数组数据或者给对象新增属性并不会触发组件的重新渲染；
-- 但vue才设置了7个变异数组（push、pop、shift、unshift、splice、sort、reverse）的 hack 方法来解决问题；
+- 但vue才设置了7个变异数组（push、pop、unshift、shift、splice、sort、reverse）的 hack 方法来解决问题；
 - 只能对属性进行劫持，需要递归遍历每个属性，新增属性需要手动 Observe（vm.$set）。
 
 *Proxy的优势*
