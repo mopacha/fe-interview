@@ -32,6 +32,22 @@ style-loader: 会把 css-loader 生成的内容，以 style 挂载到页面的 h
 vue-style-loader: 动态创建style标签插入css
 
 
+### 手把手教你撸一个 Webpack Loader
+https://www.jianshu.com/p/7fa359ffcf8d
+
 ### webpack打包原理 ? 看完这篇你就懂了 !
 https://juejin.im/post/5e116fce6fb9a047ea7472a6
 https://github.com/airuikun/blog/issues/4
+
+### 深入webpack打包原理，loader和plugin的实现
+https://juejin.im/post/5eae43f85188256d841a3b8b
+
+### webpack 打包原理总结
+
+1. 解析入口文件，使用`@babel/parser`转为AST抽象语法树
+2. 使用`@babel/traverse`遍历AST提取文件的依赖，完成依赖收集
+3. 使用@babel/core 和 @babel/preset-env将AST转成 CommenJS 的代码
+4. 递归解析所有依赖项，生成依赖关系图
+5. 重写 require函数 (浏览器不能识别commonjs语法),输出bundle
+6. 将bundle写入文件
+
