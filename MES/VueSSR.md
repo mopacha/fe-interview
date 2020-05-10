@@ -82,6 +82,21 @@ if (window.__INITIAL_STATE__) {
 window.INITIAL_STATE 就是服务端存在html中的store数据，客户端做一次同步，router.onReady在第一次不会触发，只有router接管页面之后才会触发，在beforeResolved中手动进行数据请求(否则asyncData中的请求不会触发)
 
 
-
 ## 总结
+
+*服务端数据预处理*
+1. 路由组件中定义静态的`asyncData`方法, `entry-server.js`通过路由匹配的组件，如果组件中有暴露的asyncData方法，就调用这个方法，将获取的异步数据存到Vuex的store中。
+2. 后端渲染时，通过Vuex将获取到的数据注入到相应组件中。
+3. 把store中的数据设置到window.__INITIAL_STATE__属性中。（使用`context.state = store.state`）
+4. 客户端可以拿到window.__INITIAL_STATE__里面的数据，更新store
+```js
+store.replaceState(window.__INITIAL_STATE__)
+```
+
+注入相应的组件中
+
+*cookie穿透*
+
+1. 客服端到SSR服务请求中，客户端是携带有cookie数据的,
+
 
