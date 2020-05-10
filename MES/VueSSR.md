@@ -6,19 +6,16 @@ https://juejin.im/post/5b063962f265da0ddb63dac3
 https://www.yuque.com/zifeiyu-rqpar/fd8qex
 https://mopacha.github.io/vue-ssr-doc/
 
-
 ### Vue SSR服务端渲染改造踩坑指南
 https://blog.csdn.net/chen801090/article/details/105974987/
 
 ### VueSSR的一些理解和详细配置
-
 https://blog.csdn.net/sinat_36263705/article/details/95865410
 
 ### 带你五步学会Vue SSR
 https://segmentfault.com/a/1190000016637877
 
 ### 几个点
-
 
 *服务器端数据预取*
 1. 在 entry-server.js 中，我们可以通过路由获得与 router.getMatchedComponents() 相匹配的组件，如果组件暴露出 asyncData，我们就调用这个方法。然后我们需要将解析完成的状态，附加到渲染上下文(render context)中。
