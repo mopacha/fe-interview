@@ -14,6 +14,9 @@ https://www.cnblogs.com/xieqian/p/10196977.html
 ### vue-loader
 https://www.cnblogs.com/Sherlock09/p/11023593.html
 
+### loader原理，css-loader与style-loader
+https://www.cnblogs.com/wtsx-2019/p/12483265.html
+
 ### 执行顺序
 
 ```js
@@ -48,6 +51,12 @@ http://www.ayqy.net/blog/webpack-loader/
 
 ### 关于webpack的面试题
  https://www.cnblogs.com/gaoht/p/11310365.html
+
+### webpack中loader和plugin的区别
+ https://www.jianshu.com/p/0fc6bb85ef5b
+
+### 彻底搞懂并实现webpack热更新原理
+https://segmentfault.com/a/1190000020310371
 
 ### loader入门
  https://www.dazhuanlan.com/2019/12/31/5e0adabe7de21/
