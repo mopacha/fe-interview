@@ -21,3 +21,7 @@ https://github.com/YvetteLau/Step-By-Step/issues/5
 
 ### JavaScript 为什么要有 Symbol 类型？
 https://juejin.im/post/5c9042036fb9a070eb266fd6
+
+### 判断JS数据类型的四种方法
+https://segmentfault.com/a/1190000015264821
+https://www.cnblogs.com/onepixel/p/5126046.html
