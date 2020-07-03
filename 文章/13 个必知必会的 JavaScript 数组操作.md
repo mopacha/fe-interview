@@ -1,6 +1,6 @@
 ## 13个实用的JavaScript数组操作技巧
 
-原文地址： https://www.blog.duomly.com/13-useful-javascript-array-tips-and-tricks-you-should-know/
+英文原文： https://www.blog.duomly.com/13-useful-javascript-array-tips-and-tricks-you-should-know/
 
 数组是JS最常见的概念之一，它为我们提供了处理存储数据的许多可能性。考虑到数组是Java语言中最基本的主题之一，您可以在编程开始之初就了解到这一点，在本文中，我将向您展示一些您可能不知道并且可能非常有用的技巧。这些技巧非常有助于我们编码！让我们开始吧。
 
