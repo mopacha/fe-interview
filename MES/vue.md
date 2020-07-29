@@ -88,3 +88,7 @@ https://blog.csdn.net/qq_39125684/article/details/90380268?utm_medium=distribute
 
 ### 双向通信
 http://www.fly63.com/article/detial/8188
+
+
+### 为什么使用v-for时必须添加唯一的key?
+https://juejin.im/post/5aae19aa6fb9a028d4445d1a
