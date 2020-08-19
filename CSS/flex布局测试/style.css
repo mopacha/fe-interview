@@ -1,0 +1,25 @@
+.container {
+  margin: 10px;
+  display: flex;
+  width: 500px;
+  height: 200px;
+  background-color: #eee;
+  text-align: center;
+  line-height: 100px;
+  color: #666;
+}
+.item {
+  flex: 0;
+  height: 100px;
+  width: 100px;
+}
+.a {
+  background-color: #ff4466;
+}
+.b {
+  /* max-width: 50px; */
+  background-color: #42b983;
+}
+.c {
+  background-color: #61dafb;
+}

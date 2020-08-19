@@ -1,6 +1,6 @@
 ## Flex 布局
 
-flex: flex-grow, flex-shrink ,flex-basis] 简写
+flex: [flex-grow, flex-shrink ,flex-basis] 简写
 
 ```css
 默认值：= flex: 0 1 auto
