@@ -79,7 +79,7 @@ https://www.jianshu.com/p/0e57293b2fa5
 https://www.jianshu.com/p/6c33985579c7
 
 
-### vue中8种组件通信方式, 值得收藏!
+### vue中8种组件通信方式, 值得收藏! 
 https://juejin.im/post/5d267dcdf265da1b957081a3
 
 ### Vue 子组件与父组件之间的 双向数据绑定(推荐)
