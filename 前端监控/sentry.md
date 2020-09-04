@@ -37,3 +37,16 @@ docker run -d --name sentry-worker-1 -e SENTRY_SECRET_KEY='(om)y06(q=hf--s3(8922
 
 
 ## 参考文章：https://www.cnblogs.com/xiaochina/p/12585453.html
+
+
+
+
+## 主动上报
+https://www.cnblogs.com/chris-oil/p/11512923.html （推荐）
+
+https://zhuanlan.zhihu.com/p/51446011
+
+
+
+
+https://www.jianshu.com/p/cea2d22fbb32
