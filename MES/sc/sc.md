@@ -11,10 +11,8 @@ https://www.cnblogs.com/everlose/p/12505245.html
 
 ## CommonJS与ES6 Modules规范的区别
 
-
 1. CommonJS模块是运行时加载, ES6 Modules为“编译时加载”或者静态加载.
 2. CommonJS输出是值的拷贝;
-
  当导入基本数据类型时，两个模块没有任何关联;
  而当导入复杂数据类型时，属于浅拷贝。由于两个模块引用的对象指向同一个内存空间，因此对该模块的值做修改时会影响另一个模块；
  ES6 Modules输出的是值的引用，被输出模块的内部的改变会影响引用的改变;
@@ -32,7 +30,6 @@ https://www.cnblogs.com/everlose/p/12505245.html
 
 7. 当使用require命令加载同一个模块时，不会再执行该模块，而是取到缓存之中的值。
 也就是说，CommonJS模块无论加载多少次，都只会在第一次加载时运行一次，以后再加载，就返回第一次运行的结果，除非手动清除系统缓存。
-
 
 https://mp.weixin.qq.com/s/eMC2ZQrFpuHbgQooQdv4xg
 https://juejin.im/post/6844903983987834888
@@ -90,9 +87,36 @@ function divisors(integer) {
 
 ```
 
-## 整数质因数分解 12:  2*2*3s
+## 整数质因数分解 12:  2*2*3
 
 ```js
+
+function factor(num){
+    let arr = []
+    let i =2
+    for(; i < num / 2; i++){
+        if(num % i === 0){
+            arr.push(i)
+            num = num / i
+            i =1
+        } 
+    }
+
+    if(i > num / 2 && num > 1){
+        arr.push(num)
+    }
+    return arr
+}
+
+let result = factor(100).join('*')
+console.log('res',result)
+
+
+```
+
+```js
+
+// 错了
 function factor(num, arr =[]){
     let i = 2
     for(;i < Math.floor(num/2); i++){
