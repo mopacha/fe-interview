@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    html,
+        body {
+            height: 100%
+        }
+        
+        .main {
+            display: flex;
+            height: 100%;
+        }
+        
+        .left,
+        .right {
+            height: 100%;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        
+        .left {
+            width: 300px;
+            margin-right: 20px;
+        }
+        
+        .right {
+           flex: 1;
+        }
+
+</style>
+<body>
+
+    <div class="main">
+        <div class="left">固定宽度300px</div>
+        <div class="right">自适应宽度</div>
+    </div>
+    
+</body>
+</html>
