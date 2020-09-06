@@ -144,3 +144,5 @@ factor_str(100);
 ## table 初始时是乱序，第一次点击按照时间排序，后面点击就倒序（原生js实现)
 
 https://www.jb51.net/article/103958.htm
+
+## react props是拷贝还是引用
