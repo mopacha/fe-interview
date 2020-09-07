@@ -11,15 +11,22 @@ https://www.cnblogs.com/everlose/p/12505245.html
 
 ## CommonJS与ES6 Modules规范的区别
 
+https://github.com/YvetteLau/Step-By-Step/issues/43  (推荐)
+
+https://juejin.im/post/6844904039822393358
+
 1. CommonJS模块是运行时加载, ES6 Modules为“编译时加载”或者静态加载.
 2. CommonJS输出是值的拷贝;
  当导入基本数据类型时，两个模块没有任何关联;
  而当导入复杂数据类型时，属于浅拷贝。由于两个模块引用的对象指向同一个内存空间，因此对该模块的值做修改时会影响另一个模块；
+
  ES6 Modules输出的是值的引用，被输出模块的内部的改变会影响引用的改变;
 
 3.   
 
-不同于CommonJS，ES6使用 export 和 import 来导出、导入模块。export命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系。import采用的是编译时加载，所以import导入的模块必须放在代码的顶部，模块指向也是指向同一个内存对象，所以当改变内存指向的对象的值时，导入值会随之改变（和require导入复杂类型对象相似）\
+不同于CommonJS，ES6使用 export 和 import 来导出、导入模块。export命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系。
+
+import采用的是编译时加载，所以import导入的模块必须放在代码的顶部，模块指向也是指向同一个内存对象，所以当改变内存指向的对象的值时，导入值会随之改变（和require导入复杂类型对象相似）\
 
 4. CommonJS this指向当前模块，ES6 Modules this指向undefined
 
