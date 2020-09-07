@@ -1,7 +1,33 @@
+
+### 盒模型
+
+https://www.cnblogs.com/nyw1983/p/11326599.html
+
+
+### 居中布局
+https://segmentfault.com/a/1190000016389031
+
+### 文字下划线应用
+
+1. 在html标签中对需要加下划线的文字加<u></u>即可实现加下划线样式。
+
+2. 使用CSS样式单词：text-decoration:underline
+
+3. 使用css border-bottom
+
+
+
+### 伪元素和伪类区别。使用场景
+
+
+
+
 ## npm install 的流程逻辑
 
 https://mp.weixin.qq.com/s/5tmND0G_ZkYVR7Dmug0ugQ
 https://www.cnblogs.com/everlose/p/12505245.html
+
+
 
 ## webpack chunks 如何加载
 
