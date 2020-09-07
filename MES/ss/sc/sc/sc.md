@@ -19,6 +19,7 @@ https://segmentfault.com/a/1190000016389031
 
 ### 伪元素和伪类区别。使用场景
 
+伪元素使用： https://www.cnblogs.com/wonyun/p/5807191.html
 
 
 
