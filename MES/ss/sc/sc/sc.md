@@ -317,12 +317,12 @@ console.log(obj.getA())  //2
 ```
 
 
+## vue 单页应用内存泄露
+https://blog.csdn.net/qq_41635262/article/details/106055818
 
+## 浏览器垃圾回收机制与 Vue 项目内存泄漏场景分析 + 标记清除算法
 
-
-
-
-
+https://developer.51cto.com/art/201909/602862.htm
 
 
 
