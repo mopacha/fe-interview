@@ -3,31 +3,23 @@
 
 https://www.cnblogs.com/nyw1983/p/11326599.html
 
-
 ### 居中布局
 https://segmentfault.com/a/1190000016389031
 
 ### 文字下划线应用
 
 1. 在html标签中对需要加下划线的文字加<u></u>即可实现加下划线样式。
-
 2. 使用CSS样式单词：text-decoration:underline
-
 3. 使用css border-bottom
-
-
 
 ### 伪元素和伪类区别。使用场景
 
 伪元素使用： https://www.cnblogs.com/wonyun/p/5807191.html
 
-
-
 ## npm install 的流程逻辑
 
 https://mp.weixin.qq.com/s/5tmND0G_ZkYVR7Dmug0ugQ
 https://www.cnblogs.com/everlose/p/12505245.html
-
 
 
 ## webpack chunks 如何加载
@@ -166,6 +158,7 @@ factor_str(100);
 https://www.jb51.net/article/103958.htm
 
 ## react props 是拷贝还是引用
+https://my.oschina.net/u/4384187/blog/3415269
 
 ## Object.assign polyfill 的实现
 
@@ -178,9 +171,8 @@ https://juejin.im/post/6844903895550918669
 
 ```js
 function deepClone(source){
- let target
+ let  target = Array.isArray(source) ? [] : {}
     if(typeOf(source) == 'object'){
-        target = Array.isArray(source) ? [] : {}
         for (key in source){
             if(source.hasOwnProperty(key)){
                 if(source[key] == 'object'){
@@ -199,6 +191,141 @@ function deepClone(source){
 
 
 ## react props 是引用还是拷贝
+
+https://my.oschina.net/u/4384187/blog/3415269
+
+## nginx 有哪些负载均衡的策略
+
+https://blog.csdn.net/xiaojin21cen/article/details/79903713
+
+## JavaScript 内存泄漏教程
+
+http://www.ruanyifeng.com/blog/2017/04/memory-leak.html
+
+## 查看内存使用情况
+点击Performace ==》点击录制==》页面上操作一段时间==》 停止录制==》 查看Memory==> 
+看波浪线是否趋于平稳
+如果趋于平稳就没有泄露，否则存在内存泄露
+
+## Node 查看内存使用情况
+
+```js
+> console.log(process.memoryUsage());
+{
+  rss: 22192128,
+  heapTotal: 5435392,
+  heapUsed: 3182928,
+  external: 1505788,
+  arrayBuffers: 9449
+}
+```
+rss（resident set size）：所有内存占用，包括指令区和堆栈。
+heapTotal："堆"占用的内存，包括用到的和没用到的。
+heapUsed：用到的堆的部分。
+external： V8 引擎内部的 C++ 对象占用的内存。
+判断内存泄漏，以heapUsed字段为准。
+
+## Map VS WeakMap
+
+
+
+
+## JS 标记清除算法
+JS探索-GC垃圾回收： https://zhuanlan.zhihu.com/p/103110917
+
+https://www.cnblogs.com/starof/p/6594904.html
+浅谈JavaScript垃圾收集——标记清除和引用计数： https://blog.csdn.net/zhouziyu2011/article/details/61201613
+
+
+## 为什么要做动静分离
+
+
+## 一道题
+https://www.jianshu.com/p/2ae88363c79b
+
+## 宏任务和微任务
+
+宏任务： scriprt 整体代码、setTimeout  、setInterval、UI交互事件、 I/O
+微任务： Promise.then、、 await 后面的代码
+
+## 了解vue.nextTick()
+https://www.jianshu.com/p/55203b13e894
+
+##  react 声明周期
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+https://www.jianshu.com/p/514fe21b9914
+
+
+## var和let/const的区别
+https://blog.csdn.net/qq_39009348/article/details/93042516
+https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/133
+https://juejin.im/post/6844903704189992973
+https://juejin.im/post/6844903752139276301
+
+
+
+## this
+https://zhuanlan.zhihu.com/p/24145671
+
+https://juejin.im/post/6844903805708926990
+
+
+```js
+var a= 1
+var obj ={
+	a:2,
+	getA: ()=>{
+		return this.a
+	}
+}
+console.log(obj.getA()) // 1
+```
+
+```js
+let a= 1
+let obj ={
+	a:2,
+	getA: ()=>{
+		return this.a
+	}
+}
+console.log(obj.getA())  // undefined
+```
+
+
+
+```js
+var  a= 1
+var obj ={
+	a:2,
+	getA(){
+		return this.a
+	}
+}
+console.log(obj.getA())  //2
+```
+
+```js
+let  a= 1
+let obj ={
+	a:2,
+	getA(){
+		return this.a
+	}
+}
+console.log(obj.getA())  //2
+```
+
+
+## vue 单页应用内存泄露
+https://blog.csdn.net/qq_41635262/article/details/106055818
+
+## 浏览器垃圾回收机制与 Vue 项目内存泄漏场景分析 + 标记清除算法
+
+https://developer.51cto.com/art/201909/602862.htm
+
+
+
 
 
 ## http-only
