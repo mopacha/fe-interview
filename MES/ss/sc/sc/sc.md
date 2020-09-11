@@ -69,7 +69,10 @@ https://blog.csdn.net/sinat_17775997/article/details/84314006
 
 ## JSONP 实现跨域
 
-https://www.jianshu.com/p/d006b883772a
+跨越实现： https://segmentfault.com/a/1190000010719058
+https://juejin.im/post/6844903767226351623
+
+写jsonp:  https://www.jianshu.com/p/d006b883772a
 
 ```js
 function addScript() {
@@ -333,3 +336,9 @@ https://www.cnblogs.com/ziyoublog/p/11389695.html
 
 ## 关于vue无法侦听数组及对象属性的变化的解决方案
 https://www.cnblogs.com/sue7/p/11088696.html
+
+
+
+
+
+
